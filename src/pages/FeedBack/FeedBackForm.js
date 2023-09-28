@@ -30,6 +30,15 @@ export default function FeedBackForm() {
         });
     }
 
+    {/*Clear Text for new form*/}
+    const clearText = () => {
+        setName('');
+        setSpecialTopics(''),
+        setCoverBetter(''),
+        seFutureTopics(''),
+        setExperience('')
+    }
+
    
    
    
