@@ -1,0 +1,8 @@
+/* Your CSS file or in a <style> tag in your component */
+.center-title {
+    display: flex;
+    align-items: center; /* Vertically center the title */
+    justify-content: center; /* Horizontally center the title */
+    height: 100%; /* Ensure the title spans the full height of the navbar */
+  }
+  
