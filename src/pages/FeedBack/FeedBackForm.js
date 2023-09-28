@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { db } from "../../firebase-config";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 
 
@@ -9,9 +11,24 @@ export default function FeedBackForm() {
     const [coverBetter, setCoverBetter] = useState('');
     const [futureTopics, seFutureTopics] = useState('');
     const [experience, setExperience] = useState('');
-    const [feedbacks, addFeedback] = useState([]);
+    const [feedbacks, setFeedback] = useState([]);
 
     
+    {/*Add feedback to the database*/}
+    const addFeedback = async () => {
+        const docRef = await addDoc(collection(db, "feedbacks"), {
+            name: name,
+            specialTopics: specialTopics,
+            coverBetter: coverBetter,
+            futureTopics: futureTopics,
+            experience: experience
+        }).then(() => { //if adding is success
+            alert("Feedback Store Successfully!");
+            clearText();
+        }).catch(() => { //if any error occured
+            alert("Sorry! Feedback Not Added.");
+        });
+    }
 
    
    
