@@ -9,8 +9,8 @@ function App() {
     <div>
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<About />} />
-        <Route path="/feedback" element={<FeedBackForm />} />
+        <Route exact path="/" element={<FeedBackForm />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
