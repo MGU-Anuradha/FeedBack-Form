@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+
+import { useEffect, useState } from "react";
 import { db } from "../../firebase-config";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 
@@ -14,6 +15,19 @@ export default function FeedBackForm() {
     const [feedbacks, setFeedback] = useState([]);
 
     
+    useEffect(() => {
+        getFeedbacks();
+    });
+
+
+    {/*Display all feedbacks when rendering*/}
+    const getFeedbacks = async () => {
+        const querySnapshot = await getDocs(collection(db, "feedbacks"));
+        setFeedback(querySnapshot.docs.map((doc) => ({
+            ...doc.data()
+        })));
+    }
+
     {/*Add feedback to the database*/}
     const addFeedback = async () => {
         const docRef = await addDoc(collection(db, "feedbacks"), {
@@ -33,20 +47,14 @@ export default function FeedBackForm() {
     {/*Clear Text for new form*/}
     const clearText = () => {
         setName('');
-        setSpecialTopics(''),
-        setCoverBetter(''),
-        seFutureTopics(''),
+        setSpecialTopics('');
+        setCoverBetter('');
+        seFutureTopics('');
         setExperience('')
     }
 
    
-   
-   
-   
-   
-   
-   
-   
+    
    
     return (
         <div className='container'>
@@ -84,6 +92,7 @@ export default function FeedBackForm() {
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Specific topics or areas you found most valuable</th>
+                            <th scope="col">Topics or areas that could have been covered better</th>
                             <th scope="col">Suggestions for future session topics</th>
                             <th scope="col">Overall Experience</th>
                         </tr>
