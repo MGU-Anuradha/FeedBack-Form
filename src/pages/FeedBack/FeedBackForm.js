@@ -9,10 +9,12 @@ export default function FeedBackForm() {
     const [coverBetter, setCoverBetter] = useState('');
     const [futureTopics, seFutureTopics] = useState('');
     const [experience, setExperience] = useState('');
+    const [feedbacks, setFeedbacks] = useState([]);
 
     return (
-        <div>
-            <div className="container">
+        <div className='container'>
+
+            {/* Create form */}
                 <div className="row">
                     <div>
                         <label for="exampleFormControlInput1">Name</label>
@@ -36,6 +38,34 @@ export default function FeedBackForm() {
                     </div>
                     <input class="btn btn-primary" type="submit" value="Submit"></input>
                 </div>
+            
+
+            {/*Create Table*/}
+            <div className="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Specific topics or areas you found most valuable</th>
+                            <th scope="col">Suggestions for future session topics</th>
+                            <th scope="col">Overall Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                {
+                                    feedbacks.map(feedback => {
+                                        return (
+                                            <tr>
+                                                <td>{feedback.name}</td>
+                                                <td>{feedback.specialTopics}</td>
+                                                <td>{feedback.coverBetter}</td>
+                                                <td>{feedback.futureTopics}</td>
+                                                <td>{feedback.experience}</td>
+                                            </tr>)
+                                    })
+                                }
+                            </tbody>
+                </table>
             </div>
         </div>
     )
