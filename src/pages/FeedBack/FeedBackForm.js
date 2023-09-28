@@ -9,8 +9,19 @@ export default function FeedBackForm() {
     const [coverBetter, setCoverBetter] = useState('');
     const [futureTopics, seFutureTopics] = useState('');
     const [experience, setExperience] = useState('');
-    const [feedbacks, setFeedbacks] = useState([]);
+    const [feedbacks, addFeedback] = useState([]);
 
+    
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
     return (
         <div className='container'>
 
@@ -36,7 +47,7 @@ export default function FeedBackForm() {
                         <label for="exampleFormControlTextarea1">Overall Experience</label>
                         <textarea value={experience} onChange={(e) => { setExperience(e.target.value) }} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Submit"></input>
+                    <input class="btn btn-primary" type="submit" value="Submit" onClick={addFeedback}></input>
                 </div>
             
 
