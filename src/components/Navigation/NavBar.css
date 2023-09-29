@@ -1,8 +1,23 @@
-/* Your CSS file or in a <style> tag in your component */
-.center-title {
-    display: flex;
-    align-items: center; /* Vertically center the title */
-    justify-content: center; /* Horizontally center the title */
-    height: 100%; /* Ensure the title spans the full height of the navbar */
-  }
+
+  /* NavBar.css */
+
+.navbar {
+  background-color: #ff001e73; /* Background color for the navbar (you can change this to any color you prefer) */
+}
+
+.navbar-brand {
+  font-weight: bold; /* Make the navbar brand text bold */
+  color: #0e0d0d; /* Text color for the navbar brand */
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold; /* Make the nav links bold */
+  color: #090909; /* Text color for the nav links */
+}
+
+/* Change the color of nav links on hover */
+.navbar-nav .nav-link:hover {
+  color: #ffcc00; /* Change to the desired hover color */
+}
+
   

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../firebase-config";
 import { collection, addDoc, getDocs } from "firebase/firestore";
-import { Container } from './FeedBackFormStyle.jsx';
+
 
 
 
@@ -58,7 +58,6 @@ export default function FeedBackForm() {
     
    
     return (
-        <Container>
         <div className='container'>
 
             {/* Create form */}
@@ -116,6 +115,5 @@ export default function FeedBackForm() {
                 </table>
             </div>
         </div>
-        </Container>
     )
 }
