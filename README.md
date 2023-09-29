@@ -4,6 +4,9 @@ This project is a simple feedback form application built with React.js and Fireb
 
 It serves as a learning project :slightly_smiling_face: to explore and practice various concepts in React.js, including components, states, routing, and API integration with Firebase.
 
+:o: Additionally, the feedback form functionalities have been developed, focusing on functionality first. However, the visual design is a work in progress and will be enhanced soon 
+for a more polished look and feel.
+
 ## Project Overview
 
 The project aims to create a feedback form for a hypothetical event or session. Participants can submit their feedback, which is stored in a Firebase database.
